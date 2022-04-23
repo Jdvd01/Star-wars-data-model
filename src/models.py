@@ -49,6 +49,7 @@ class Planeta(Base):
 class Personaje(Base):
     __tablename__ = "personaje"
     id = Column(Integer, primary_key = True)
+    favorito = relationship("favorito")
 
     nombre = Column(String(20), nullable = False, unique = False)
     genero = Column(String(10), nullable = True)
@@ -57,6 +58,7 @@ class Personaje(Base):
 class Vehiculo(Base):
     __tablename__ = "vehiculo"
     id = Column(Integer, primary_key = True)
+    favorito = relationship("favorito")
 
     nombre = Column(String(30), nullable = False, unique= True)
     modelo = Column(String(30), nullable = False, unique = True)
@@ -67,6 +69,7 @@ class Vehiculo(Base):
 class Nave(Base):
     __tablename__ = "nave"
     id = Column(Integer, primary_key = True)
+    favorito = relationship("favorito")
 
     nombre = Column(String(30), nullable = False, unique = False)
     modelo = Column(String(30), nullable = False, unique = False)
